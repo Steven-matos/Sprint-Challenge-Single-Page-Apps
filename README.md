@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: client-side routing is beneficial when it comes to load times. when a user is clicking through the links it doesnt do another request on the server all it does it change the state of the page showing content that has already been loaded before. with this the user is not having to wait on another request from a server just simply showing what has already been loaded on inital load of the page.
 
 ## Project Set Up
 
