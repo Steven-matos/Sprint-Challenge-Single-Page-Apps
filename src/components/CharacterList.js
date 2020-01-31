@@ -2,26 +2,39 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { Container, Row } from 'reactstrap';
 import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
 
 export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
   const [character, setCharacter] = useState([])
 
+  const [query, setQuery] = useState('')
+
   useEffect(() => {
-    // TODO: Add API Request here - must run in `useEffect`
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
     axios.get('https://rickandmortyapi.com/api/character/')
     .then(res => {
       console.log('This is my characters array: ',res.data.results)
-      setCharacter(res.data.results);
+
+      const characters = res.data.results.filter(character => 
+        character.name.toLowerCase().includes(query.toLowerCase())
+        );
+
+      setCharacter(characters);
     })
     .catch(err => {
       console.error("You are getting an error of: ", err); 
     })
-  }, []);
+  }, [query]);
+
+  const handleInputChange = event => {
+    setQuery(event.target.value);
+  }
 
   return (
     <section className="character-list">
+    <SearchForm 
+      handleInputChange={handleInputChange}
+      query={query}
+    />
       <h2>Character's</h2>
       <Container className="themed-container" fluid="sm">
         <Row xs="3">
