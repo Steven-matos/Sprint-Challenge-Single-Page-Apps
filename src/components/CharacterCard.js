@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Col, Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button} from 'reactstrap'
+  CardTitle, CardSubtitle} from 'reactstrap'
 import styled from 'styled-components';
 
 const Cards = styled(Card) `
