@@ -17,12 +17,13 @@ const Links = styled(Link) `
   color: black;
   background: white;
   padding: .5rem 1.5rem; 
-  font-size: 2rem;
+  font-size: 1.3rem;
   border: 1px solid black;
   border-radius: 10px;
   &:hover {
     color: tomato;
-    text-decoration: none;
+    text-decoration: none;    
+    border: 1px solid tomato;
   }
 `;
 

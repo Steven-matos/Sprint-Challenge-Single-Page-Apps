@@ -3,6 +3,13 @@ import axios from 'axios';
 import { Container, Row } from 'reactstrap';
 import CharacterCard from './CharacterCard';
 import SearchForm from './SearchForm';
+import styled from 'styled-components';
+
+const Title = styled.h2 `
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 2.5rem;
+`;
 
 export default function CharacterList() {
   const [character, setCharacter] = useState([])
@@ -31,12 +38,16 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-    <SearchForm 
+    {/* <SearchForm 
       handleInputChange={handleInputChange}
       query={query}
-    />
-      <h2>Character's</h2>
-      <Container className="themed-container" fluid="sm">
+    /> */}
+      <Title>Characters</Title>
+      <SearchForm
+        handleInputChange={handleInputChange}
+        query={query}
+      />
+      <Container className="themed-container" fluid={true}>
         <Row xs="3">
           {character.map(data => {
             return (
