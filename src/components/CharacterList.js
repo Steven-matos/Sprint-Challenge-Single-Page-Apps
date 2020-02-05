@@ -38,10 +38,6 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-    {/* <SearchForm 
-      handleInputChange={handleInputChange}
-      query={query}
-    /> */}
       <Title>Characters</Title>
       <SearchForm
         handleInputChange={handleInputChange}
